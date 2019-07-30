@@ -1,15 +1,17 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'cocktails.jpg' %>');">
+<div class="banner" style="background-image: url('<%= 'https://heatherchristo.com/wp-content/uploads/2014/05/Strawberry-Vodka-Lemonade-from-HeatherChristo.com_.jpg' %>');">
   <div class="banner-content">
     <h1>Hoxton's cocktails</h1>
-    <p>If life gives you limes, makes margaritas</p>
+    <p>When life gives you limes, make margaritas</p>
     <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
+
+
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
+        <div class="card" style="background-image: url('<%='https://heatherchristo.com/wp-content/uploads/2014/05/Strawberry-Vodka-Lemonade-from-HeatherChristo.com_.jpg' %>');">
           <div class="card-description">
             <h2><%= cocktail.name %></h2>
           </div>
@@ -19,3 +21,4 @@
     <% end %>
   </div>
 </div>
+
