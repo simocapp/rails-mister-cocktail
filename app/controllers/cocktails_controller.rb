@@ -1,12 +1,13 @@
 class CocktailsController < ApplicationController
-  #resources :cocktails, only: [:index, :show, :new, :create] do
   def index
     @cocktails = Cocktail.all
   end
 
   def show
-    @cocktail = Cocktail.find(params[:id])
     # A user can see the details of a given cocktail, with the dose needed for each ingredient
+    @cocktail = Cocktail.find(params[:id])
+    @dose = Dose.new
+    @review = Review.new
   end
 
   def new
@@ -15,11 +16,11 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-      if @cocktail.save
-        redirect_to cocktail_path(@cocktail)
-      else
-        render :new
-      end
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render 'new'
+    end
   end
 
   private
