@@ -7,7 +7,6 @@ class CocktailsController < ApplicationController
     # A user can see the details of a given cocktail, with the dose needed for each ingredient
     @cocktail = Cocktail.find(params[:id])
     @dose = Dose.new
-    @review = Review.new
   end
 
   def new
@@ -26,6 +25,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end
